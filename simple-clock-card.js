@@ -59,3 +59,23 @@ class SimpleClockCard extends HTMLElement {
 }
 
 customElements.define('simple-clock-card', SimpleClockCard);
+
+let style = document.createElement('style');
+style.innerHTML = `
+    @keyframes fadeInOut {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .colon {
+        animation: fadeInOut 2s infinite;
+    }
+`;
+document.head.appendChild(style);
