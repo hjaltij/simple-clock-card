@@ -39,11 +39,11 @@ class SimpleClockCard extends HTMLElement {
 				let  hide_seconds = config.hide_seconds !== undefined ? config.hide_seconds : false;
 				let  lead_zero = config.lead_zero !== undefined ? config.lead_zero : false;
 
-				let time_str =  (use_military ? (lead_zero ? addZero(h) : h) : ((h + 11) % 12) + 1 ) +
-                   ":" +
-                   m +
-                   (hide_seconds ? "" : ":" + s ) +
-                   (use_military ? " " : " " + p );
+				let time_str = (use_military ? (lead_zero ? addZero(h) : h) : ((h + 11) % 12) + 1) +
+				    '<span class="colon">:</span>' +
+				    m +
+				    (hide_seconds ? "" : '<span class="colon">:</span>' + s) +
+				    (use_military ? " " : " " + p);
 				content.innerHTML = time_str;
 			}
 		}
